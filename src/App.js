@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import "./App.css";
+import Calender from "./Calender";
+const events = {
+  "4ZVboMpvWCRveLNmwuhW": {
+    createdAt: 1569184941933,
+    days: 4,
+    errorMessage: null,
+    id: 1569184941933,
+    requestAvailability: true,
+    start: "2019-08-01",
+    end: "2019-08-05",
+    title: "holiday"
+  },
+  myn59AMUaIX5IneyNXiH: {
+    createdAt: 1568895819334,
+    days: 7,
+    end: "2019-09-26",
+    errorMessage: null,
+    id: 1568895819334,
+    requestAvailability: true,
+    start: "2019-09-19",
+    title: "holiday"
+  }
+};
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Calender events={events} />
     </div>
   );
 }
