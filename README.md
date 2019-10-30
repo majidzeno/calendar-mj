@@ -1,6 +1,8 @@
 <h1 align="center">
   <br>
+  
 ![calendar-mj component Logo](https://github.com/majidzeno/calendar-mj/blob/master/logo.png)
+
   <br>
 </h1>
 
