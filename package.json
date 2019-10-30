@@ -5,10 +5,13 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "lodash.template": "^4.5.0",
+    "mixin-deep": "^2.0.1",
     "moment": "^2.24.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.2"
+    "react-scripts": "3.1.2",
+    "set-value": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
