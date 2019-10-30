@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./Calender.css";
 import moment from "moment";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import renderEventsInCalender from "./renderEventsInCalender";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   daysInMonth,
   year,
@@ -22,8 +22,6 @@ class Calendar extends Component {
     numberofdaysofTheCurrentmonth: null,
     momentObj: moment(),
     today: moment().date(), //18
-    // eventsArray: [],
-    // showEvents: false,
     events: null
   };
 
@@ -34,7 +32,7 @@ class Calendar extends Component {
     firstDayOfMonth(this.state.momentObj);
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate() {
     this.state.events &&
       daysOfTheCurrentMonth(
         renderEventsInCalender(this.props.events),
@@ -102,16 +100,30 @@ class Calendar extends Component {
     return (
       <div>
         <div className="monthNav">
-          <div className="monthNav__iconPrev" onClick={this.prevMonth}>
-            {/* <FontAwesomeIcon icon="arrow-left" /> */}
+          <div
+            className="monthNav__iconPrev"
+            onKeyPress={() => {}}
+            onKeyLeft={this.prevMonth}
+            onClick={this.prevMonth}
+            role="button"
+            tabIndex="0"
+          >
+            <FontAwesomeIcon icon="arrow-left" style={{ display: "none" }} />
             Prev
           </div>
           <div className="monthNav__currentMonth">
             <span> {this.state.currentMonth}</span>
             <span>{this.state.currentYear}</span>
           </div>
-          <div className="monthNav__iconNext" onClick={this.nextMonth}>
-            {/* <FontAwesomeIcon icon="arrow-right" /> */}
+          <div
+            onKeyPress={() => {}}
+            className="monthNav__iconNext"
+            onKeyRight={this.nextMonth}
+            onClick={this.nextMonth}
+            role="button"
+            tabIndex="0"
+          >
+            <FontAwesomeIcon icon="arrow-right" style={{ display: "none" }} />
             Next
           </div>
         </div>
