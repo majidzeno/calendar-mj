@@ -1,4 +1,10 @@
+<h1 align="center">
+  downshift 🏎
+  <br>
+  
 ![calendar-mj component Logo](https://github.com/majidzeno/calendar-mj/blob/master/logo.png)
+  <br>
+</h1>
 
 # calendar-mj
 
