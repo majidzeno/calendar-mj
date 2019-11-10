@@ -10,6 +10,7 @@
 
 calendar-mj is a react component showing events in calendar cells.
 
+<!--
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
@@ -26,7 +27,7 @@ import foobar
 foobar.pluralize('word') # returns 'words'
 foobar.pluralize('goose') # returns 'geese'
 foobar.singularize('phenomena') # returns 'phenomenon'
-```
+``` -->
 
 ## Contributing
 
