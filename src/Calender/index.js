@@ -50,6 +50,7 @@ class Calendar extends Component {
       currentMonthIndex = 0;
     }
     let currentMonth = allMonthsArr[currentMonthIndex];
+
     return this.setState({
       currentMonth: currentMonth,
       currentMonthIndex: currentMonthIndex,
@@ -88,7 +89,23 @@ class Calendar extends Component {
           this.state.today
         )
       );
+    // console.log("eventsInCalender", eventsInCalender);
+    // console.log("this.state.momentObj", this.state.momentObj);
+    // console.log("this.state.today", this.state.today);
+
+    // console.log(
+    //   "daysOfTheCurrentMonth",
+    //   //   splitDaysIntoWeeks(
+    //   daysOfTheCurrentMonth(
+    //     eventsInCalender,
+    //     this.state.momentObj,
+    //     this.state.today
+    //   )
+    //   //   )
+    // );
+
     let totalWeeks = [];
+
     weeks.map((row, i) => {
       return totalWeeks.push(<tr key={1 / (i + 1)}>{row}</tr>);
     });
@@ -137,14 +154,16 @@ class Calendar extends Component {
             </tr>
           </thead>
           <tbody className="daysBody">
-            {/* {this.props.events ? (
+            {this.props.events ? (
               this.renderDays()
             ) : (
               <tr>
                 <td>Loading...</td>
               </tr>
-            )} */}
-            {this.renderDays()}
+            )}
+
+            {/* {console.log("week Created", this.renderDays())} */}
+            {/* {this.renderDays()} */}
           </tbody>
         </table>
       </div>
