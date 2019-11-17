@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Calender.css";
 import moment from "moment";
 import renderEventsInCalender from "./renderEventsInCalender";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   daysInMonth,
   year,
@@ -26,34 +25,38 @@ class Calendar extends Component {
   };
 
   componentDidMount() {
-    daysInMonth(this.state.momentObj);
+    // daysInMonth(this.state.momentObj);
     year(this.state.momentObj);
     currentDay(this.state.momentObj);
     firstDayOfMonth(this.state.momentObj);
+    this.setState({
+      numberofdaysofTheCurrentmonth: daysInMonth(this.state.momentObj)
+    });
   }
 
   componentDidUpdate() {
-    this.state.events &&
-      daysOfTheCurrentMonth(
-        renderEventsInCalender(this.props.events),
-        this.state.momentObj,
-        this.state.today
-      );
+    // this.state.events &&
+    daysOfTheCurrentMonth(
+      renderEventsInCalender(this.props.events),
+      this.state.momentObj,
+      this.state.today
+    );
   }
 
   nextMonth = () => {
-    // Need Conditionals
     let currentMonthIndex = this.state.currentMonthIndex + 1;
 
     if (currentMonthIndex > allMonthsArr.length - 1) {
       currentMonthIndex = 0;
     }
     let currentMonth = allMonthsArr[currentMonthIndex];
+
     return this.setState({
       currentMonth: currentMonth,
       currentMonthIndex: currentMonthIndex,
       momentObj: this.state.momentObj.add(1, "M"),
-      currentYear: year(this.state.momentObj)
+      currentYear: year(this.state.momentObj),
+      numberofdaysofTheCurrentmonth: daysInMonth(this.state.momentObj)
     });
   };
   prevMonth = () => {
@@ -66,7 +69,8 @@ class Calendar extends Component {
       currentMonth: currentMonth,
       currentMonthIndex: currentMonthIndex,
       momentObj: this.state.momentObj.subtract(1, "M"),
-      currentYear: year(this.state.momentObj)
+      currentYear: year(this.state.momentObj),
+      numberofdaysofTheCurrentmonth: daysInMonth(this.state.momentObj)
     });
   };
 
@@ -77,7 +81,7 @@ class Calendar extends Component {
     }
 
     let weeks =
-      this.props.events &&
+      // this.props.events &&
       splitDaysIntoWeeks(
         daysOfTheCurrentMonth(
           eventsInCalender,
@@ -85,7 +89,9 @@ class Calendar extends Component {
           this.state.today
         )
       );
+
     let totalWeeks = [];
+
     weeks.map((row, i) => {
       return totalWeeks.push(<tr key={1 / (i + 1)}>{row}</tr>);
     });
@@ -103,12 +109,11 @@ class Calendar extends Component {
           <div
             className="monthNav__iconPrev"
             onKeyPress={() => {}}
-            onKeyLeft={this.prevMonth}
             onClick={this.prevMonth}
             role="button"
             tabIndex="0"
           >
-            <FontAwesomeIcon icon="arrow-left" style={{ display: "none" }} />
+            {/* <FontAwesomeIcon icon="arrow-left" style={{ display: "none" }} /> */}
             Prev
           </div>
           <div className="monthNav__currentMonth">
@@ -118,12 +123,11 @@ class Calendar extends Component {
           <div
             onKeyPress={() => {}}
             className="monthNav__iconNext"
-            onKeyRight={this.nextMonth}
             onClick={this.nextMonth}
             role="button"
             tabIndex="0"
           >
-            <FontAwesomeIcon icon="arrow-right" style={{ display: "none" }} />
+            {/* <FontAwesomeIcon icon="arrow-right" style={{ display: "none" }} /> */}
             Next
           </div>
         </div>
