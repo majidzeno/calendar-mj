@@ -1,6 +1,5 @@
 import React from "react";
-import "./App.css";
-import Calender from "./Calender";
+import Calendar from "../lib";
 const events = {
   "4ZVboMpvWCRveLNmwuhW": {
     createdAt: 1569184941933,
@@ -23,12 +22,5 @@ const events = {
     title: "holiday"
   }
 };
-function App() {
-  return (
-    <div className="App">
-      <Calender events={events} />
-    </div>
-  );
-}
-
+const App = () => <Calendar events={events} />;
 export default App;

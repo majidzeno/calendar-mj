@@ -89,20 +89,6 @@ class Calendar extends Component {
           this.state.today
         )
       );
-    // console.log("eventsInCalender", eventsInCalender);
-    // console.log("this.state.momentObj", this.state.momentObj);
-    // console.log("this.state.today", this.state.today);
-
-    // console.log(
-    //   "daysOfTheCurrentMonth",
-    //   //   splitDaysIntoWeeks(
-    //   daysOfTheCurrentMonth(
-    //     eventsInCalender,
-    //     this.state.momentObj,
-    //     this.state.today
-    //   )
-    //   //   )
-    // );
 
     let totalWeeks = [];
 
@@ -161,9 +147,6 @@ class Calendar extends Component {
                 <td>Loading...</td>
               </tr>
             )}
-
-            {/* {console.log("week Created", this.renderDays())} */}
-            {/* {this.renderDays()} */}
           </tbody>
         </table>
       </div>

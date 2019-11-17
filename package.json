@@ -1,21 +1,19 @@
 {
   "name": "calendar-mj",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "babel-cli": "6.26.0",
     "lodash.template": "^4.5.0",
     "mixin-deep": "^2.0.1",
     "moment": "^2.24.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.2",
     "set-value": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint .",
@@ -52,6 +50,9 @@
     ]
   },
   "devDependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-scripts": "3.1.2",
     "@babel/preset-react": "^7.6.3",
     "@testing-library/dom": "^6.5.0",
     "@testing-library/jest-dom": "^4.1.0",
@@ -75,5 +76,24 @@
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
     "react-test-renderer": "^16.11.0"
-  }
+  },
+  "description": "<h1 align=\"center\">   <br>",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/majidzeno/calendar-mj.git"
+  },
+  "keywords": [
+    "calendar",
+    "calendar-component",
+    "react-component",
+    "react-calendar-component"
+  ],
+  "author": "Majid Eltayeb (https://majideltayeb.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/majidzeno/calendar-mj/issues"
+  },
+  "homepage": "https://github.com/majidzeno/calendar-mj#readme"
 }
